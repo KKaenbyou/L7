@@ -12,11 +12,68 @@
 		 crossorigin="anonymous"> 
 	
 		<script type="text/javascript" src="L7.js"></script>
+		
+		<style>
+			body {
+				color:red;
+				text-align:center;
+				background-color:black;
+				font-family:sans-serif;
+			}
+			
+			form {
+				display: inline-block;
+			}
+			
+			wrapper {
+				text-align: center;
+			}
+			
+			table, th, td {
+				border: 1px solid red;
+				margin-top: 20px;
+				width: 600px;
+				height: 50px;
+			}
+		</style>
 	</head>
 	
 	<body>
 		<div class="container-fluid">
-		
+			<h1>Lucky Sevens</h1><br />
+			<p>How many dollars do you have to bet?</p>
+			<form name="l7" onsubmit=" return dice();">
+				<label for="d">Starting bet: </label>
+				<input type="number" id="d">
+				<div class="wrapper">
+					<button type="submit" id="submit" class="btn" style="background-color:red; margin-top: 20px;">Play</button>
+				</div>
+			</form>
+			
+			<table id="results" align="center">
+			<thead>
+				<tr>
+					<th colspan="2">Results (in dollars)</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>Starting Bet</td>
+					<td id="start"></td>
+				</tr>
+				<tr>
+					<td>Total Rolls Before Going Broke</td>
+					<td id="rolls"></td>
+				</tr>
+				<tr>
+					<td>Highest Amount Won</td>
+					<td id="max"></td>
+				</tr>
+				<tr>
+					<td>Roll Count at Hightest Amount Won</td>
+					<td id="maxRolls"></td>
+				</tr>
+			</tbody>
 		</div>
 	</body>
 	
